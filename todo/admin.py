@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Task, Tag
+from todo.models import Task, Tag
 
 
 @admin.register(Task)

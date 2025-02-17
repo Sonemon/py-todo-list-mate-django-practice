@@ -1,5 +1,5 @@
 from django import forms
-from .models import Tag, Task
+from todo.models import Tag, Task
 
 class TagForm(forms.ModelForm):
     class Meta:
