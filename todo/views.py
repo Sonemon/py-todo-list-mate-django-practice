@@ -12,6 +12,7 @@ class CompleteTaskView(View):
         task.save()
         return redirect("home")
 
+
 class UpdateTaskView(View):
     def get(self, request, pk):
         task = get_object_or_404(Task, pk=pk)
@@ -25,6 +26,7 @@ class UpdateTaskView(View):
             form.save()
             return redirect("home")
         return render(request, "todo/task_form.html", {"form": form})
+
 
 class DeleteTaskView(View):
     def post(self, request, pk):
@@ -68,7 +70,6 @@ class TagDeleteView(View):
         return redirect("tag_list")
 
 
-
 class TaskListView(ListView):
     model = Task
     template_name = "todo/task_list.html"
@@ -89,4 +90,3 @@ class TagListView(ListView):
     model = Tag
     template_name = "todo/tag_list.html"
     context_object_name = "tags"
-

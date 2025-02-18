@@ -1,6 +1,7 @@
 from django import forms
 from todo.models import Tag, Task
 
+
 class TagForm(forms.ModelForm):
     class Meta:
         model = Tag
@@ -13,7 +14,9 @@ class TaskForm(forms.ModelForm):
         fields = ["content", "deadline", "tags"]
 
         widgets = {
-            "deadline": forms.DateTimeInput(attrs={
-                "type": "datetime-local",
-            })
+            "deadline": forms.DateTimeInput(
+                attrs={
+                    "type": "datetime-local",
+                }
+            )
         }
